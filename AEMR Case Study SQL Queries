@@ -1,0 +1,14 @@
+--Question/Objective of the Query
+--Solution Submited
+
+--Question 1.1: Statement to retrieve count of valid outage events in 2016
+--Grouped/Ordered by outage reason
+
+--Solution:
+SELECT COUNT(*) AS Total_Number_Outage_Events,
+       Status,
+       Reason
+  FROM AEMR
+ WHERE Status = 'Approved' AND Year(Start_Time) = 2016
+ GROUP BY Reason 
+ ORDER BY Reason;
